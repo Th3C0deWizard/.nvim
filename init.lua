@@ -70,6 +70,11 @@ plugins = {
       "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
       "MunifTanjim/nui.nvim",
     }
+  },
+  {
+    'akinsho/bufferline.nvim',
+    version = "*",
+    dependencies = 'nvim-tree/nvim-web-devicons'
   }
 }
 
@@ -143,3 +148,5 @@ require("neo-tree").setup({
   }
 })
 vim.keymap.set("n","<leader>e", vim.cmd.Neotree)
+
+require("bufferline").setup({})
