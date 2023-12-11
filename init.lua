@@ -5,6 +5,7 @@ vim.opt.shiftwidth = 2
 vim.opt.nu = true
 vim.opt.relativenumber = true
 vim.opt.wrap = true
+vim.opt.breakindent = true
 vim.opt.scrolloff = 10
 
 vim.g.mapleader = " "
