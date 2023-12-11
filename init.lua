@@ -10,7 +10,11 @@ vim.opt.scrolloff = 10
 vim.g.mapleader = " "
 vim.keymap.set("n","<leader>q", vim.cmd.q)
 vim.keymap.set("n","<leader>w", vim.cmd.w)
+vim.keymap.set("n","<C-s>",vim.cmd.w)
 vim.keymap.set("n","<leader>wq", vim.cmd.wq)
+vim.keymap.set("n","|", vim.cmd.vsplit)
+vim.keymap.set("n","<C-l>", "<C-w><C-l>")
+vim.keymap.set("n","<C-h>", "<C-w><C-h>")
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -150,3 +154,5 @@ require("neo-tree").setup({
 vim.keymap.set("n","<leader>e", vim.cmd.Neotree)
 
 require("bufferline").setup({})
+vim.keymap.set("n","<leader>c", vim.cmd.BufferLineCloseOthers)
+
