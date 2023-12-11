@@ -61,6 +61,17 @@ plugins = {
     'windwp/nvim-autopairs',
     event = "InsertEnter",
     opts = {} -- this is equalent to setup({}) function
+  },
+{
+    "nvim-tree/nvim-tree.lua",
+  version = "*",
+  lazy = false,
+  dependencies = {
+    "nvim-tree/nvim-web-devicons",
+  },
+  config = function()
+    require("nvim-tree").setup {}
+  end,
   }
 }
 
@@ -111,11 +122,14 @@ vim.keymap.set("n","<leader>u",vim.cmd.UndotreeToggle)
 vim.keymap.set("n","<leader>g", vim.cmd.Git)
 
 local lsp_zero = require('lsp-zero')
+
 lsp_zero.on_attach(function(client, bufnr)
   -- see :help lsp-zero-keybindings
   -- to learn the available actions
   lsp_zero.default_keymaps({buffer = bufnr})
+  lsp_zero.buffer_autoformat()
 end)
+
 require('mason').setup({})
 require('mason-lspconfig').setup({
   ensure_installed = {},
