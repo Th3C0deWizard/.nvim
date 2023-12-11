@@ -9,13 +9,13 @@ vim.opt.breakindent = true
 vim.opt.scrolloff = 10
 
 vim.g.mapleader = " "
-vim.keymap.set("n","<leader>q", vim.cmd.q)
-vim.keymap.set("n","<leader>w", vim.cmd.w)
-vim.keymap.set("n","<C-s>",vim.cmd.w)
-vim.keymap.set("n","<leader>wq", vim.cmd.wq)
-vim.keymap.set("n","|", vim.cmd.vsplit)
-vim.keymap.set("n","<C-l>", "<C-w><C-l>")
-vim.keymap.set("n","<C-h>", "<C-w><C-h>")
+vim.keymap.set("n", "<leader>q", vim.cmd.q)
+vim.keymap.set("n", "<leader>w", vim.cmd.w)
+vim.keymap.set("n", "<C-s>", vim.cmd.w)
+vim.keymap.set("n", "<leader>wq", vim.cmd.wq)
+vim.keymap.set("n", "|", vim.cmd.vsplit)
+vim.keymap.set("n", "<C-l>", "<C-w><C-l>")
+vim.keymap.set("n", "<C-h>", "<C-w><C-h>")
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -47,7 +47,7 @@ plugins = {
     dependencies = { 'nvim-lua/plenary.nvim' }
   },
   {
-    {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"}
+    { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" }
   },
   {
     "mbbill/undotree"
@@ -55,13 +55,13 @@ plugins = {
   {
     "tpope/vim-fugitive"
   },
-  {'VonHeikemen/lsp-zero.nvim', branch = 'v3.x'},
-  {'williamboman/mason.nvim'},
-  {'williamboman/mason-lspconfig.nvim'},
-  {'neovim/nvim-lspconfig'},
-  {'hrsh7th/cmp-nvim-lsp'},
-  {'hrsh7th/nvim-cmp'},
-  {'L3MON4D3/LuaSnip'},
+  { 'VonHeikemen/lsp-zero.nvim',        branch = 'v3.x' },
+  { 'williamboman/mason.nvim' },
+  { 'williamboman/mason-lspconfig.nvim' },
+  { 'neovim/nvim-lspconfig' },
+  { 'hrsh7th/cmp-nvim-lsp' },
+  { 'hrsh7th/nvim-cmp' },
+  { 'L3MON4D3/LuaSnip' },
   {
     'windwp/nvim-autopairs',
     event = "InsertEnter",
@@ -82,7 +82,63 @@ plugins = {
     dependencies = 'nvim-tree/nvim-web-devicons'
   },
   {
-     'feline-nvim/feline.nvim', branch = '0.5-compat' 
+    'feline-nvim/feline.nvim', branch = '0.5-compat'
+  },
+  {
+    'nvimdev/dashboard-nvim',
+    event = 'VimEnter',
+    config = function()
+      require('dashboard').setup {
+        theme = "doom",
+        config = {
+          header = {
+
+            '        ▄█          █          █▄          ',
+            '      ▐██      ▄█  ███  █▄      ██▌        ',
+            '     ▐██▌     ██████████████     ▐██▌      ',
+            '    ████     ████████████████    ████      ',
+            '    ▐█████  ██████████████████  █████▌     ',
+            '    ████████████████████████████████       ',
+            '     ███████▀▀████████████▀▀███████        ',
+            '      █████▌  ▄▄ ▀████▀ ▄▄  ▐█████         ',
+            '    ▄▄██████▄ ▀▀  ████  ▀▀ ▄██████▄▄       ',
+            '    ██████████████████████████████████     ',
+            '  ████████████████████████████████████     ',
+            ' ██████   ███████▀▄██▄▀███████   ██████▌   ',
+            '▐█████     ██████████████████      █████▌  ',
+            ' ▐█████      ██████▀  ▀██████       █████▌ ',
+            '  █████▄      ███        ███      ▄█████   ',
+            '    ██████     █          █     ██████     ',
+            '     █████                     █████       ',
+            '      █████                   █████        ',
+            '      ████   ▄            ▄    ████        ',
+            '        ████ ██           ██ ████          ',
+            '          ████████ ▄██▄ ████████           ',
+            '         ████████████████████████          ',
+            '         ████████████████████████          ',
+            '          ▀█████████▀▀█████████▀           ',
+            '            ▀███▀       ▀███▀              ',
+            '                                           ',
+            '                                           ',
+            '                                           ',
+          }, --your header
+          center = {
+            {
+              icon = ' ',
+              icon_hl = 'Title',
+              desc = 'Find File           ',
+              desc_hl = 'String',
+              keymap = 'SPC f f',
+              key_hl = 'Number',
+              key_format = ' %s', -- remove default surrounding `[]`
+              action = 'lua print(2)'
+            },
+          },
+          footer = {} --your footer
+        }
+      }
+    end,
+    dependencies = { { 'nvim-tree/nvim-web-devicons' } }
   }
 }
 
@@ -90,7 +146,7 @@ opts = {
 
 }
 
-require("lazy").setup(plugins,opts)
+require("lazy").setup(plugins, opts)
 
 require("tokyonight").setup({
   style = "night"
@@ -110,15 +166,15 @@ require("telescope").setup({
   }
 })
 local telescope_builtin = require("telescope.builtin")
-vim.keymap.set('n','<leader>ff',telescope_builtin.find_files,{})
-vim.keymap.set('n','<leader>fg',telescope_builtin.live_grep,{})
-vim.keymap.set('n','<leader>ft',telescope_builtin.colorscheme,{})
+vim.keymap.set('n', '<leader>ff', telescope_builtin.find_files, {})
+vim.keymap.set('n', '<leader>fg', telescope_builtin.live_grep, {})
+vim.keymap.set('n', '<leader>ft', telescope_builtin.colorscheme, {})
 
 local TSconfig = require("nvim-treesitter.configs")
 TSconfig.setup({
   ensure_installed = {
-   "lua",
-   "php"
+    "lua",
+    "php"
   },
   highlight = {
     enable = true
@@ -128,16 +184,16 @@ TSconfig.setup({
   }
 })
 
-vim.keymap.set("n","<leader>u",vim.cmd.UndotreeToggle)
+vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
 
-vim.keymap.set("n","<leader>g", vim.cmd.Git)
+vim.keymap.set("n", "<leader>g", vim.cmd.Git)
 
 local lsp_zero = require('lsp-zero')
 
 lsp_zero.on_attach(function(client, bufnr)
   -- see :help lsp-zero-keybindings
   -- to learn the available actions
-  lsp_zero.default_keymaps({buffer = bufnr})
+  lsp_zero.default_keymaps({ buffer = bufnr })
   lsp_zero.buffer_autoformat()
 end)
 
@@ -155,10 +211,10 @@ require("neo-tree").setup({
     width = 30
   }
 })
-vim.keymap.set("n","<leader>e", vim.cmd.Neotree)
+vim.keymap.set("n", "<leader>e", vim.cmd.Neotree)
 
 require("bufferline").setup({})
-vim.keymap.set("n","<leader>c", vim.cmd.BufferLineCloseOthers)
-vim.keymap.set("n","<leader><Tab>", vim.cmd.BufferLineCycleNext)
+vim.keymap.set("n", "<leader>c", vim.cmd.BufferLineCloseOthers)
+vim.keymap.set("n", "<leader><Tab>", vim.cmd.BufferLineCycleNext)
 
 require("feline").setup()
