@@ -1,8 +1,11 @@
-vim.cmd("set expandtab")
-vim.cmd("set tabstop=2")
-vim.cmd("set softtabstop=2")
-vim.cmd("set shiftwidth=2")
-vim.wo.relativenumber = true
+vim.opt.expandtab = true
+vim.opt.tabstop = 2
+vim.opt.softtabstop = 2
+vim.opt.shiftwidth = 2
+vim.opt.nu = true
+vim.opt.relativenumber = true
+vim.opt.wrap = true
+vim.opt.scrolloff = 10
 
 vim.g.mapleader = " "
 vim.keymap.set("n","<leader>q", vim.cmd.q)
