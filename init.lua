@@ -136,4 +136,10 @@ require('mason-lspconfig').setup({
   },
 })
 
+require("neo-tree").setup({
+  window = {
+    position = "right",
+    width = 30
+  }
+})
 vim.keymap.set("n","<leader>e", vim.cmd.Neotree)
