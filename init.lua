@@ -155,4 +155,4 @@ vim.keymap.set("n","<leader>e", vim.cmd.Neotree)
 
 require("bufferline").setup({})
 vim.keymap.set("n","<leader>c", vim.cmd.BufferLineCloseOthers)
-
+vim.keymap.set("n","<leader><Tab>", vim.cmd.BufferLineCycleNext)
