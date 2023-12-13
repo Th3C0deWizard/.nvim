@@ -4,7 +4,7 @@ vim.keymap.set("n", "<leader>w", vim.cmd.w)
 vim.keymap.set("n", "<C-s>", vim.cmd.w)
 vim.keymap.set("n", "<leader>wq", vim.cmd.wq)
 -- horizontal and vertical splits
-vim.keymap.set("n", "<S-|>", vim.cmd.split)
+vim.keymap.set("n", "°", vim.cmd.split)
 vim.keymap.set("n", "|", vim.cmd.vsplit)
 -- Move between splits
 vim.keymap.set("n", "<C-h>", "<C-w><C-h>")
