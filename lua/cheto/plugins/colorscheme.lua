@@ -1,9 +1,9 @@
 return {
-	"oxfist/night-owl.nvim",
-	name = "night-owl",
+	"loctvl842/monokai-pro.nvim",
+	name = "monokai-pro",
 	lazy = false,
 	priority = 1000,
 	config = function()
-		vim.cmd.colorscheme("night-owl")
+		vim.cmd.colorscheme("monokai-pro")
 	end,
 }
