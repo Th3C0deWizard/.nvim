@@ -9,3 +9,4 @@ vim.opt.breakindent = true
 vim.opt.scrolloff = 10
 vim.opt.smartindent = true
 vim.opt.clipboard = "unnamedplus"
+vim.opt.termguicolors = true
