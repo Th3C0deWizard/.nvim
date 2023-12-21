@@ -52,7 +52,7 @@ return {
 		-- configure lualine with modified theme
 		lualine.setup({
 			options = {
-				theme = "monokai-pro",
+				theme = "nightfly",
 			},
 			sections = {
 				lualine_x = {
