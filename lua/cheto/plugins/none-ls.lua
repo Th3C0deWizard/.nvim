@@ -42,6 +42,7 @@ return {
 				}), -- js/ts formatter
 				formatting.stylua, -- lua formatter
 				formatting.black,
+				formatting.clang_format,
 				diagnostics.pylint,
 				diagnostics.eslint_d.with({ -- js/ts linter
 					condition = function(utils)
