@@ -133,5 +133,10 @@ return {
 			on_attach = on_attach,
 			filetypes = { "cpp", "c++", "c", "cc", "cxx" },
 		})
+
+		lspconfig["cmake"].setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+		})
 	end,
 }
