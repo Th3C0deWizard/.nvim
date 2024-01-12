@@ -1,9 +1,11 @@
 return {
-	"bluz71/vim-nightfly-colors",
-	name = "nightfly",
+	"sainnhe/sonokai",
+	name = "sonokai",
 	lazy = false,
 	priority = 1000,
 	config = function()
-		vim.cmd("colorscheme nightfly")
+		vim.cmd("let g:sonokai_style = 'espresso'")
+		vim.cmd("let g:sonokai_better_performance = 1")
+		vim.cmd("colorscheme sonokai")
 	end,
 }
