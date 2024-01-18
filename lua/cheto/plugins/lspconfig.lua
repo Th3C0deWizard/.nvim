@@ -139,7 +139,7 @@ return {
 			on_attach = on_attach,
 		})
 
-		lspconfig["vuels"].setup({
+		lspconfig["volar"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
 		})
